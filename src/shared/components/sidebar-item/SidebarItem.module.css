@@ -1,0 +1,43 @@
+.item {
+  display: flex;
+  column-gap: 10px;
+  padding: 6px 10px;
+
+  border-radius: 5px;
+  cursor: pointer;
+
+  transition: background-color 0.2s ease-in-out;
+}
+
+.item:hover {
+  background-color: var(--box-hover-background-color);
+}
+
+.item.active {
+  background-color: #27498c;
+}
+
+/* Icon */
+
+.item svg {
+  margin-top: 2px;
+}
+
+/* Icon */
+
+/* Text */
+
+.item .text {
+  display: flex;
+  flex-direction: column;
+  row-gap: 3px;
+
+  color: white;
+}
+
+.item .text small {
+  font-size: 0.8rem;
+  color: var(--secondary-text-color);
+}
+
+/* Text */

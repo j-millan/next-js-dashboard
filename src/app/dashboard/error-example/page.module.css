@@ -1,0 +1,39 @@
+
+/* Error page */
+
+.errorTitle, .status .status-text {
+  font-size: 1.3rem;
+}
+
+.status {
+  display: flex;
+  flex-direction: column;
+
+}
+
+.status .status-code {
+  font-size: 7rem;
+  font-weight: bold;
+}
+
+.status .status-text {
+  font-weight: bold;
+}
+
+button.try-again {
+  padding: 10px 20px;
+  
+  border: none;
+  border-radius: 5px;
+  background-color: #2d54a2;
+  font-size: 1.1rem;
+  
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+
+button.try-again:hover {
+  background-color: #426dc3;
+}
+
+/* Error page */

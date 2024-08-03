@@ -1,0 +1,21 @@
+.pokemons {
+  display: flex;
+  column-gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  overflow-y: auto;
+
+  /* Scrollbar */
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+
+/* Scrollbar */
+
+.pokemons::-webkit-scrollbar {
+  display: none;
+}
+
+/* Scrollbar */

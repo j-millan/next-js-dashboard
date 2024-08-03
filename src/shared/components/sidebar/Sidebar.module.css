@@ -1,0 +1,85 @@
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+  
+  width: 320px;
+  height: 100%;
+  padding: 20px 15px;
+  box-sizing: border-box;
+
+  background-color: var(--box-background-color);;
+  color: white;
+}
+
+.sidebar .spacer {
+  height: 2.5rem;
+}
+
+/* Sidebar header */
+
+.sidebar .header {
+  display: flex;
+  flex-direction: column;
+  row-gap: 5px;
+  width: 100%;
+
+  text-align: center;
+}
+  
+.sidebar .header .title {
+  display: flex;
+  column-gap: 5px;
+  justify-content: center;
+  align-items: center;
+}
+
+.sidebar .header .title span {
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+
+.sidebar .header small {
+  color: var(--secondary-text-color);
+}
+
+/* Sidebar header */
+
+/* Sidebar user */
+
+.sidebar .user-profile {
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+
+  text-align: center;
+}
+
+.sidebar .user-profile .welcome {
+  color: var(--secondary-text-color);
+  font-size: 0.9rem;
+
+}
+
+.sidebar .user-profile img {
+  border-radius: 50%;
+  border: 3px solid rgba(255, 255, 255, 0.1);
+  margin: auto;
+}
+
+.sidebar .user-profile .username {
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+/* Sidebar user */
+
+/* Sidebar items */
+
+.sidebar .items {
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+}
+
+/* Sidebar items */

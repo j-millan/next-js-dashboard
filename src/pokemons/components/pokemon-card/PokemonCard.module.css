@@ -1,0 +1,52 @@
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  row-gap: 15px;
+
+  box-sizing: border-box;
+  width: 220px;
+  padding: 20px;
+  margin-bottom: 20px;
+
+  border-radius: 10px;
+  border: 1px solid #a9a9a9;
+  text-align: center;
+}
+
+
+.card .icon {
+  position: absolute;
+  right: 12px;
+  top: 12px;
+
+  color: #a6a6a6;
+}
+
+.card img {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.card .name {
+  font-size: 1.3rem;
+}
+
+.card .details {
+  --border-blue: #2d54a2;
+
+  font-size: 0.9rem;
+  padding: 5px;
+  
+  color: var(--border-blue);
+  border: 1px solid var(--border-blue);
+  border-radius: 10px;
+
+  transition: all 0.2s ease-in-out;
+}
+
+.card .details:hover {
+  color: white;
+
+  background-color: var(--border-blue);
+}

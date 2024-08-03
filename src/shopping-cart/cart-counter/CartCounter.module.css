@@ -1,0 +1,46 @@
+/* Counter */
+
+.count {
+  font-size: 5rem;
+  font-weight: bold;
+}
+
+/* Counter */
+
+
+/* Buttons */
+
+.buttons {
+  display: flex;
+  column-gap: 5px;
+}
+
+.buttons button {
+  padding: 10px 20px;
+  
+  border: none;
+  border-radius: 5px;
+  font-size: 1.1rem;
+  
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.buttons button.add-button {
+  background-color: #2d54a2;
+}
+
+.buttons button.add-button:hover {
+  background-color: #426dc3;
+}
+
+.buttons button.remove-button {
+  background-color: #842424;
+}
+
+.buttons button.remove-button:hover {
+  background-color: #b52e2e;
+
+}
+
+/* Buttons */

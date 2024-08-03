@@ -1,0 +1,98 @@
+/* Main Container */
+.card-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  row-gap: 15px;
+
+  box-sizing: border-box;
+  width: 50%;
+  padding: 20px 10px;
+  margin-bottom: 20px;
+
+  border-radius: 20px;
+  border: 1px solid #a9a9a9;
+  text-align: center; 
+}
+.title {
+  font-weight: bold;
+}
+
+.card-container .title {
+  text-align: left;
+  text-transform: capitalize;
+}
+
+.card-container .image {
+  margin: auto;
+}
+
+.card-container .moves {
+  text-transform: capitalize;
+  text-align: left;
+  font-size: 0.9rem;
+}
+
+.card-container .info-cards {
+  display: flex;
+  column-gap: 20px;
+  flex-wrap: wrap;
+}
+
+.card-container .info-cards .card {
+  display: flex;
+  flex-direction: column;
+  row-gap: 5px;
+
+  padding: 10px;
+  width: 45%;
+  box-sizing: border-box;
+
+  border-radius: 10px;
+  text-align: left;
+}
+
+.card-container .info-cards .card .title {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: rgb(107, 107, 107);
+}
+
+.card-container .info-cards .card .text {
+  font-size: 0.9rem;
+  font-weight: bold;
+  text-transform: capitalize;
+}
+
+.card-container .info-cards .card .sprites {
+  text-align: center;
+}
+
+
+/* Error page */
+
+.errorTitle, .status .status-text {
+  font-size: 1.3rem;
+}
+
+.status {
+  display: flex;
+  flex-direction: column;
+
+}
+
+.status .status-code {
+  font-size: 7rem;
+  font-weight: bold;
+}
+
+.status .status-text {
+  font-weight: bold;
+  text-align: center;
+}
+
+.back:hover {
+  text-decoration: underline;
+}
+
+/* Error page */

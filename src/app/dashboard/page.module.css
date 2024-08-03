@@ -1,0 +1,20 @@
+
+.container {
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  row-gap: 25px;
+  
+  width: 100%;
+  padding: 4rem;
+  overflow-y: auto;
+  
+  color: rgb(30, 34, 38);
+}
