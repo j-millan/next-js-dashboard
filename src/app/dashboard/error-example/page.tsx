@@ -1,5 +1,8 @@
 const ErrorExamplePage = () => {
-  throw new Error("An error has ocurred.");
+  if (true) {
+    // throw new Error("An error has ocurred.");
+  }
+
   return (<>There should be an error here.</>);
 };
 

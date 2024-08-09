@@ -5,7 +5,7 @@ import { PokemonCard } from "@/pokemons";
 const pokemonListUrl = "https://pokeapi.co/api/v2/pokemon/";
 
 const fetchPokemons = async (): Promise<SimplePokemon[]> => {
-  const apiCall: Promise<Response> = fetch(`${pokemonListUrl}?limit=40`, {
+  const apiCall: Promise<Response> = fetch(`${pokemonListUrl}?limit=80`, {
     next: { revalidate: 60 },
   });
 
