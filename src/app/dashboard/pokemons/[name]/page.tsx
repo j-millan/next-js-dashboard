@@ -1,23 +1,23 @@
 import { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { Pokemon, pokeSpriteUrl } from "@/pokemons";
+import { Pokemon, PokemonsResponse, pokeSpriteUrl } from "@/pokemons";
 
 import styles from "./page.module.css";
 import { notFound } from "next/navigation";
 
 interface PokemonPageParams {
-  id: string;
+  name: string;
 }
 
 interface PokemonPageProps {
   params: PokemonPageParams;
 }
 
-const pokemonUrl = "https://pokeapi.co/api/v2/pokemon/";
+const pokemonsUrl = "https://pokeapi.co/api/v2/pokemon/";
 
-const fetchPokemon = async (id: string): Promise<Pokemon> => {
-  const apiCall: Promise<Response> = fetch(`${pokemonUrl}${id}`, {
+const fetchPokemon = async (name: string): Promise<Pokemon> => {
+  const apiCall: Promise<Response> = fetch(`${pokemonsUrl}${name}`, {
     next: { revalidate: 60 },
   });
 
@@ -32,16 +32,20 @@ const fetchPokemon = async (id: string): Promise<Pokemon> => {
 
 // This function only runs at build time !!
 export const generateStaticParams = async (): Promise<PokemonPageParams[]> => {
-  return Array.from({ length: 181 })
-    .map((_, i) => ({
-      id: (i + 1).toString(),
-    }))
+  const pokemonsApiCall: Promise<PokemonsResponse> = fetch(
+    `${pokemonsUrl}?limit=150`,
+    {
+      next: { revalidate: 60 },
+    }
+  ).then((res) => res.json());
+
+  return (await pokemonsApiCall).results.map(({ name }) => ({ name }));
 };
 
 export const generateMetadata = async ({
   params,
 }: PokemonPageProps): Promise<Metadata> => {
-  const { name, id } = await fetchPokemon(params.id);
+  const { name, id } = await fetchPokemon(params.name);
   const capitalizedName = name.charAt(0).toUpperCase() + name.slice(1);
 
   return {
@@ -51,7 +55,7 @@ export const generateMetadata = async ({
 };
 
 const PokemonPage = async ({ params }: PokemonPageProps) => {
-  const pokemon = await fetchPokemon(params.id);
+  const pokemon = await fetchPokemon(params.name);
 
   return (
     <>

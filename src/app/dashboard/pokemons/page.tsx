@@ -1,11 +1,12 @@
 import { SimplePokemon, PokemonsResponse } from "@/pokemons";
 import styles from "./page.module.css";
 import { PokemonCard } from "@/pokemons";
+import { Metadata } from "next";
 
-const pokemonListUrl = "https://pokeapi.co/api/v2/pokemon/";
+const pokemonsUrl = "https://pokeapi.co/api/v2/pokemon/";
 
 const fetchPokemons = async (): Promise<SimplePokemon[]> => {
-  const apiCall: Promise<Response> = fetch(`${pokemonListUrl}?limit=80`, {
+  const apiCall: Promise<Response> = fetch(`${pokemonsUrl}?limit=150`, {
     next: { revalidate: 60 },
   });
 
@@ -25,6 +26,11 @@ const fetchPokemons = async (): Promise<SimplePokemon[]> => {
     };
   });
 };
+
+export const metadata: Metadata = {
+  title: 'Pokémons',
+  description: 'See al available Pokémons.',
+}
 
 const PokemonsPage = async () => {
   const pokemons = await fetchPokemons();

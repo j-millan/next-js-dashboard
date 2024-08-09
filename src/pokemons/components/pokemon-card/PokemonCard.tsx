@@ -14,9 +14,7 @@ interface PokemonCardProps {
 export const PokemonCard = ({ pokemon: { name, id } }: PokemonCardProps) => {
   return (
     <div className={styles.card}>
-      <Link href={"dashboard/pokemon" + id}>
-        <HeartIcon size={21} className={styles.icon} />
-      </Link>
+      <HeartIcon size={21} className={styles.icon} />
       <Image
         src={`${pokeSpriteUrl}${id}.svg`}
         alt={name}
@@ -25,7 +23,7 @@ export const PokemonCard = ({ pokemon: { name, id } }: PokemonCardProps) => {
         priority={false}
       />
       <span className={styles.name}>{name}</span>
-      <Link className={styles.details} href={"pokemons/" + id}>
+      <Link className={styles.details} href={"pokemons/" + name.toLowerCase()}>
         See details
       </Link>
     </div>
