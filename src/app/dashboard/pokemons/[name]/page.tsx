@@ -30,13 +30,12 @@ const fetchPokemon = async (name: string): Promise<Pokemon> => {
   return await response;
 };
 
+export const revalidate = 3600;
+
 // This function only runs at build time !!
 export const generateStaticParams = async (): Promise<PokemonPageParams[]> => {
   const pokemonsApiCall: Promise<PokemonsResponse> = fetch(
-    `${pokemonsUrl}?limit=150`,
-    {
-      next: { revalidate: 60 },
-    }
+    `${pokemonsUrl}?limit=150`
   ).then((res) => res.json());
 
   return (await pokemonsApiCall).results.map(({ name }) => ({ name }));

@@ -6,9 +6,7 @@ import { Metadata } from "next";
 const pokemonsUrl = "https://pokeapi.co/api/v2/pokemon/";
 
 const fetchPokemons = async (): Promise<SimplePokemon[]> => {
-  const apiCall: Promise<Response> = fetch(`${pokemonsUrl}?limit=150`, {
-    next: { revalidate: 60 },
-  });
+  const apiCall: Promise<Response> = fetch(`${pokemonsUrl}?limit=150`);
 
   const response: Promise<PokemonsResponse> = apiCall
     .then((res) => res.json())
@@ -26,6 +24,8 @@ const fetchPokemons = async (): Promise<SimplePokemon[]> => {
     };
   });
 };
+
+export const revalidate = 3600;
 
 export const metadata: Metadata = {
   title: 'Pokémons',
